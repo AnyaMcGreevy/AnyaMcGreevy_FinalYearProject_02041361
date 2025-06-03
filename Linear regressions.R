@@ -4,16 +4,16 @@ library(tidyverse)
 
 #FOREST COVER
 
-fifty <- glm(SpeciesRichness ~ X50m.1, data = overall, family = quasipoisson)
+fifty <- glm(SpeciesRichness ~ log50m, data = overall, family = quasipoisson)
 summary(fifty)
 
-hundred <- glm(SpeciesRichness ~ X100m.1, data = overall, family = quasipoisson)
+hundred <- glm(SpeciesRichness ~ log100m, data = overall, family = quasipoisson)
 summary(hundred)
 
-onefifty <- glm(SpeciesRichness ~ X150m.1, data = overall, family = quasipoisson)
+onefifty <- glm(SpeciesRichness ~ log150m, data = overall, family = quasipoisson)
 summary(onefifty)
 
-twohundred <- glm(SpeciesRichness ~ X200m.1, data = overall, family = quasipoisson)
+twohundred <- glm(SpeciesRichness ~ log200m, data = overall, family = quasipoisson)
 summary(twohundred)
 
 # Base plot
@@ -28,10 +28,10 @@ ggplot(overall, aes(x = X200m.1, y = SpeciesRichness)) +
   theme_minimal(base_size = 14)
 
 
-twofifty  <- glm(SpeciesRichness ~ X250m.1, data = overall, family = quasipoisson)
+twofifty  <- glm(SpeciesRichness ~ log250m, data = overall, family = quasipoisson)
 summary(twofifty)
 
-threehundred  <- glm(SpeciesRichness ~ X300m.1, data = overall, family = quasipoisson)
+threehundred  <- glm(SpeciesRichness ~ log300m, data = overall, family = quasipoisson)
 summary(threehundred)
 
 #R^2
